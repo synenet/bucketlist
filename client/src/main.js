@@ -3,6 +3,7 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import Root from './Root'
+import  css from 'element-ui/lib/theme-default/index.css'
 
 /**
 * This is the Vuex store and it is
@@ -33,7 +34,7 @@ require('./includes')
 /**
 * Element UI
 */
-Vue.use(ElementUI, { locale })
+Vue.use(ElementUI, { locale, css })
 
 /**
 * Make $http avaible to all components

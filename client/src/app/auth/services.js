@@ -2,15 +2,20 @@
 // import http client
 import { http } from 'plugins/http'
 import { getData } from 'utils/get'
-
+//const root = 'localhost:8700/api';
 // send login data and retrive a new token
+const cors = "https://cors-anywhere.herokuapp.com/"
 export const postLogin = ({ email, password }) =>
-  http.post('/auth/token/issue', { email, password })
+ // http.post('/auth/token/issue', { email, password })
+  //http.post(cors + 'http://localhost:8900/api/auth/login', { email, password })
+  http.post('http://localhost:8900/api/auth/login', { email, password })
   /**
    * functional approach, more readable and generate minus code
    * examples:
    * PromiseObject.then(response => response.data)
    * PromiseObject.then({ data } => data)
+   * 
+
    *
    * We do this many times in many locations.
    * We know that .then accepts a function and what arguments it receives

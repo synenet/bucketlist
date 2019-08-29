@@ -1,10 +1,11 @@
 import axios from 'axios'
 import interceptors from './interceptors'
 import { apiUrl } from '../../config'
-
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 // allow use http client without Vue instance
 export const http = axios.create({
   baseURL: apiUrl,
+   
 })
 
 /**
@@ -12,6 +13,10 @@ export const http = axios.create({
 */
 export function setToken(token) {
   http.defaults.headers.common.Authorization = `Bearer ${token}`
+  http.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+ // http.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+  http.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+
 }
 
 // receive store and data by options

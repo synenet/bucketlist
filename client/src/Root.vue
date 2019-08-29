@@ -25,4 +25,4 @@ export default {
   </div>
 </template>
 
-<style lang="sass" src="assets/sass/app.scss"></style>
+
